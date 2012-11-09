@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  titulo: MyString
+  genero: MyString
+  lancado_em: 2012-11-09
+  n_faixas: 1
+  nota: 1
+  have: false
+  banda: 
+
+two:
+  titulo: MyString
+  genero: MyString
+  lancado_em: 2012-11-09
+  n_faixas: 1
+  nota: 1
+  have: false
+  banda: 

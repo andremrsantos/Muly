@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @banda.name %>
+</p>
+
+<p>
+  <b>Genero:</b>
+  <%= @banda.genero %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @banda.bio %>
+</p>
+
+<p>
+  <b>Fundada em:</b>
+  <%= @banda.fundada_em %>
+</p>
+
+<h3> <%= link_to 'Albuns', banda_albums_path(@banda) %> </h3>
+<ul>
+	<%= render @banda.albums %>
+</ul>
+
+<%= link_to 'New Album', new_banda_album_path(@banda) %> |
+<%= link_to 'Edit', edit_banda_path(@banda) %> |
+<%= link_to 'Back', bandas_path %>

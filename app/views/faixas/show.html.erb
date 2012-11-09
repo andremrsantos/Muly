@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Titulo:</b>
+  <%= @faixa.titulo %>
+</p>
+
+<p>
+  <b>Letra:</b>
+  <%= @faixa.letra %>
+</p>
+
+<p>
+  <b>Album:</b>
+  <%= link_to @faixa.album.titulo, album_path(@faixa.album) %>
+</p>
+
+
+<%= link_to 'Edit', edit_faixa_path(@faixa) %> |
+<%= link_to 'Back', album_path(@faixa.album) %>

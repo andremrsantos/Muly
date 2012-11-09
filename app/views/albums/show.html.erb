@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Titulo:</b>
+  <%= @album.titulo %>
+</p>
+
+<p>
+  <b>Genero:</b>
+  <%= @album.genero %>
+</p>
+
+<p>
+  <b>Lancado em:</b>
+  <%= @album.lancado_em %>
+</p>
+
+<p>
+  <b>N faixas:</b>
+  <%= @album.n_faixas %>
+</p>
+
+<p>
+  <b>Nota:</b>
+  <%= @album.nota %>
+</p>
+
+<p>
+  <b>Have:</b>
+  <%= @album.have %>
+</p>
+
+<p>
+  <b>Banda:</b>
+  <%= link_to @album.banda.name, banda_path(@album.banda) %>
+</p>
+
+<h3> <%= link_to 'Faixas', album_faixas_path(@album) %> </h3>
+<ol>
+  <%= render @album.faixas %>
+</ol>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', banda_path(@album.banda) %>

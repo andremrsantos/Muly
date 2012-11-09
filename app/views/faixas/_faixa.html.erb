@@ -1,0 +1,5 @@
+<li>
+	<%= link_to faixa.titulo, faixa_path(faixa) %> |
+	<%= link_to "Editar", edit_faixa_path(faixa) %> |
+	<%= link_to "Remover", faixa_path(faixa), method: :delete, data: { confirm: 'Are you sure?' } %>
+</li>

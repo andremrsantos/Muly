@@ -1,0 +1,33 @@
+<%= form_for(@banda) do |f| %>
+  <% if @banda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@banda.errors.count, "error") %> prohibited this banda from being saved:</h2>
+
+      <ul>
+      <% @banda.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :genero %><br />
+    <%= f.text_field :genero %>
+  </div>
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_area :bio %>
+  </div>
+  <div class="field">
+    <%= f.label :fundada_em %><br />
+    <%= f.date_select :fundada_em %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
