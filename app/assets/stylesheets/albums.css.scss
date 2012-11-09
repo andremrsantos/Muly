@@ -1,3 +1,69 @@
 // Place all the styles related to the albums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a {
+	color: #E0330C;
+	text-decoration: none;
+	line-height: 1.2em;
+	&:hover, &:focus { text-decoration: underline; background: none; }
+	&:visited { color: #E0330C;}
+}
+
+h1, h2, h3, h4, h5, h6, b { text-transform: uppercase;}
+
+span.have-true, span.have-false {
+	display: inline-block;
+	overflow: hidden;
+	text-indent: -99999px;
+	width: 26px;
+	height: 26px;
+}
+span.have-true{ background: image-url("ok.gif") no-repeat center bottom; }
+span.have-false{background: image-url("no.gif") no-repeat center bottom; }
+
+span.nota { 
+	display: inline-block;
+	width: 118px;
+	height: 26px;
+	background: image-url("no-star.png") repeat-x center bottom;
+	.star-0, .star-1, .star-2, .star-3, .star-4, .star-5 {
+		height: 26px;
+		width: 0;
+		display: inline-block;
+		text-indent: -99999px;
+		background: image-url("star.png") repeat-x center bottom;
+	}
+	span.star-1{ width: 24px;}
+	span.star-2{ width: 48px;}
+	span.star-3{ width: 72px;}
+	span.star-4{ width: 96px;}
+	span.star-5{ width: 118px;}
+}
+
+div.banda-div, div.album-div, div.faixa-div {
+	padding: 0 1em;
+	h2 { border-bottom: 1px solid #E0330C; padding: 0.2em 0.5em; margin: 0 }
+	div.info, div.albums-div { float: left; max-width: 25em;}
+}
+
+div.info, div.albums-div {
+	min-width: 25em;
+	p { max-width: 20em; }
+	b { display: inline-block; width: 10em;}
+	padding: 0 2em;
+}
+
+div.actions { 
+	clear: both; 
+	padding: 0 2em;
+	span {
+		display: inline-block;
+		text-align: center;
+	}
+}
+
+div.list {
+	padding-left: 2em;
+	span { display:list-item;}
+}

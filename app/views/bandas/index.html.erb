@@ -1,28 +1,30 @@
-<h1>Listing bandas</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Genero</th>
-    <th>Bio</th>
-    <th>Fundada em</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h2> Bandas </h2>
 
 <% @bandas.each do |banda| %>
-  <tr>
-    <td><%= banda.name %></td>
-    <td><%= banda.genero %></td>
-    <td><%= banda.bio %></td>
-    <td><%= banda.fundada_em %></td>
-    <td><%= link_to 'Show', banda %></td>
-    <td><%= link_to 'Edit', edit_banda_path(banda) %></td>
-    <td><%= link_to 'Destroy', banda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class='banda-div'>
+    <h2><%= link_to banda.name, banda_path(banda) %></h2>
+    <div class='info'>
+      <p><b>G&ecirc;nero:</b><%= banda.genero %></td>
+      <p><b>Fundada em:</b><%= banda.fundada_em %></p>
+      <p><b>Bio:</b><%= banda.bio %></p>
+    </div>
+    <div class='albums-div'> 
+      <h3>Albuns</h3>
+      <div class='list'>
+        <% banda.albums.each do |al| %>
+          <span>
+            <%= link_to al.titulo, album_path(al)%> [<%= al.lancado_em.year %>]
+          </span>
+        <% end %>
+      </div>
+    </div>
+    <div class='actions'>
+      <span><%= link_to 'Show', banda %></span> |
+      <span><%= link_to 'Edit', edit_banda_path(banda) %></span> |
+      <span><%= link_to 'Destroy', banda, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    </div>
+  </div>
 <% end %>
-</table>
 
 <br />
 

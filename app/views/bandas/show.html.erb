@@ -1,18 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @banda.name %>
-</p>
+<h2><%= @banda.name %></h2>
 
+<div class='info'>
 <p>
   <b>Genero:</b>
   <%= @banda.genero %>
-</p>
-
-<p>
-  <b>Bio:</b>
-  <%= @banda.bio %>
 </p>
 
 <p>
@@ -20,11 +13,19 @@
   <%= @banda.fundada_em %>
 </p>
 
-<h3> <%= link_to 'Albuns', banda_albums_path(@banda) %> </h3>
-<ul>
-	<%= render @banda.albums %>
-</ul>
+<p>
+  <b>Bio:</b>
+  <%= @banda.bio %>
+</p>
+</div>
 
+<div class='album-div'>
+	<h3> <%= link_to 'Albuns', banda_albums_path(@banda) %> </h3>
+	<%= render @banda.albums %>
+</div>
+
+<div class='actions'>
 <%= link_to 'New Album', new_banda_album_path(@banda) %> |
 <%= link_to 'Edit', edit_banda_path(@banda) %> |
 <%= link_to 'Back', bandas_path %>
+</div>

@@ -1,26 +1,7 @@
 <h1><%= link_to @album.titulo, album_path(@album) %> faixas</h1>
 
-<table>
-  <tr>
-    <th>Titulo</th>
-    <th>Letra</th>
-    <th>Album</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @faixas.each do |faixa| %>
-  <tr>
-    <td><%= faixa.titulo %></td>
-    <td><%= faixa.letra %></td>
-    <td><%= link_to 'Show', faixa %></td>
-    <td><%= link_to 'Edit', edit_faixa_path(faixa) %></td>
-    <td><%= link_to 'Destroy', faixa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<ol>
+  <%= render @faixas %>
+</ol>
 
 <%= link_to 'New Faixa', new_album_faixa_path(@album) %>

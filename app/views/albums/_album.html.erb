@@ -1,5 +1,11 @@
-<li>
-	<h4><%= link_to album.titulo, album_path(album)%></h4>
-	<p><b>lançado em:</b><%= album.lancado_em.to_s(:short)%></p>
-	<p><b>no de faixas:</b><%= album.n_faixas %></p>
-</li>
+<div class='info'>
+	<h4>
+		<%= link_to "#{album.titulo} [#{album.lancado_em.year}]", album_path(album)%>
+	</h4>
+	<span class='nota'>
+		<span class='star-<%= album.nota %>'><%= album.nota %></span>
+	</span>
+	<ol>
+		<%= render album.faixas %>
+	</ol>
+</div>

@@ -1,33 +1,6 @@
 <h1><%= link_to @banda.name, banda_path(@banda) %> albums</h1>
 
-<table>
-  <tr>
-    <th>Titulo</th>
-    <th>Genero</th>
-    <th>Lancado em</th>
-    <th>N faixas</th>
-    <th>Nota</th>
-    <th>Have</th>
-    <th>Banda</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @albums.each do |album| %>
-  <tr>
-    <td><%= album.titulo %></td>
-    <td><%= album.genero %></td>
-    <td><%= album.lancado_em %></td>
-    <td><%= album.n_faixas %></td>
-    <td><%= album.nota %></td>
-    <td><%= album.have %></td>
-    <td><%= link_to 'Show', album %></td>
-    <td><%= link_to 'Edit', edit_album_path(album) %></td>
-    <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<%= render @albums %>
 
 <br />
 

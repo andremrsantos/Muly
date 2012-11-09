@@ -15,7 +15,7 @@ class Album < ActiveRecord::Base
   def atualiza_faixas
   	count = self.n_faixas - self.faixas.size
   	if count >= 0
-  		count.times { self.faixas.create(titulo: "Nova faixa") }
+  		count.times { self.faixas.build(titulo: "Nova faixa") }
   	else
   		count.abs.times do
   			last = self.faixas.last
